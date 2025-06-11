@@ -1,18 +1,10 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
+const lights = document.querySelectorAll('.light');
 
-//Bootstrap
-import "bootstrap/dist/css/bootstrap.min.css";
-import "bootstrap"
-
-// index.css'
-import '../styles/index.css'
-
-// components
-import Home from './components/Home';
-
-ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
-    <Home/>
-  </React.StrictMode>,
-)
+lights.forEach(light => {
+  light.addEventListener('click', () => {
+    
+    lights.forEach(l => l.classList.remove('active'));
+    
+    light.classList.add('active');
+  });
+});
